@@ -1,0 +1,27 @@
+﻿@model List<PruebaBertoni.Models.Photo>
+@{
+    ViewBag.Title = "albumdetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Album details</h2>
+
+@foreach (var photo in Model)
+{
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="@photo.thumbnailUrl" alt="...">
+            <div class="caption">
+                <h3>@photo.title</h3>
+                <a class="btn btn-primary btn-comentarios" id="@photo.id">Ver commentarios</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table id="tblComentarios">
+    <tbody id="tblCommentarios"></tbody>
+</table>
+   
+}
